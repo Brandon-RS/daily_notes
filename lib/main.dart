@@ -1,4 +1,4 @@
-import 'package:daily_notes/routes/routes.dart';
+import 'package:daily_notes/routes/router.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,14 +10,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: router,
       title: 'Daily  Notes',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      initialRoute: '/',
-      routes: getApplicationRoutes(),
     );
   }
 }
