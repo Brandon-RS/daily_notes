@@ -8,7 +8,7 @@ class OnboardingContent extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Positioned(
-      bottom: size.height * .18,
+      bottom: size.height * .14,
       width: size.width,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -47,7 +47,7 @@ class OnboardingContent extends StatelessWidget {
                 style: TextStyle(
                   color: Colors.white,
                   fontFamily: 'Montserrat',
-                  fontSize: 20,
+                  fontSize: 19,
                   fontWeight: FontWeight.w600,
                 ),
               ),
