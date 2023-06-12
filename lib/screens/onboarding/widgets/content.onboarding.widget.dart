@@ -1,5 +1,6 @@
 import 'package:daily_notes/constants/color.constants.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class OnboardingContent extends StatelessWidget {
   const OnboardingContent({super.key});
@@ -37,7 +38,7 @@ class OnboardingContent extends StatelessWidget {
                 overlayColor: MaterialStateProperty.all<Color?>(DNColors.purple.withOpacity(0.04)),
                 backgroundColor: MaterialStateProperty.all<Color?>(DNColors.purple),
                 padding: MaterialStateProperty.all(const EdgeInsets.symmetric(horizontal: 30, vertical: 18))),
-            onPressed: () {},
+            onPressed: () => GoRouter.of(context).go('/'),
             child: const Text(
               'Get Started',
               style: TextStyle(

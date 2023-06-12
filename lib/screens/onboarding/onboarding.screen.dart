@@ -1,7 +1,7 @@
 import 'package:daily_notes/constants/color.constants.dart';
 import 'package:daily_notes/preferences/preferences.dart';
 import 'package:daily_notes/screens/onboarding/widgets/onboarding.widgets.dart';
-import 'package:daily_notes/shared/title_check_box.widget.dart';
+import 'package:daily_notes/shared/widgets/title_check_box.widget.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingScreen extends StatelessWidget {
@@ -37,7 +37,7 @@ class OnboardingScreen extends StatelessWidget {
             Center(
               child: TitleCheckBox(
                 text: 'Do not show this page again.',
-                onTap: () => Preferences.showOnboarding = false,
+                onTap: () => Preferences.showOnboarding = !Preferences.showOnboarding,
               ),
             ),
           ],
