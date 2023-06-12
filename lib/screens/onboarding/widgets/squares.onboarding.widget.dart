@@ -10,8 +10,8 @@ class Squares extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Positioned(
-      right: size.width * .5 - 156,
-      top: size.height * .15 + 40,
+      right: size.width * .5 - 150,
+      top: size.height * .1 + 40,
       child: Transform.rotate(
         angle: 45 * (pi / 180),
         child: Stack(

@@ -9,14 +9,14 @@ class SquaresWithIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Positioned(
-      right: size.width * .5 - 150,
-      top: size.height * .15 + 248,
+      right: size.width * .5 - 136,
+      top: size.height * .1 + 236,
       child: Stack(
         alignment: Alignment.center,
         children: [
           Container(
-            height: 76,
-            width: 76,
+            height: 70,
+            width: 70,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(22),
               gradient: LinearGradient(
@@ -30,8 +30,8 @@ class SquaresWithIcon extends StatelessWidget {
             ),
           ),
           Container(
-            height: 63,
-            width: 63,
+            height: 58,
+            width: 58,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(18),
               gradient: LinearGradient(
@@ -45,8 +45,8 @@ class SquaresWithIcon extends StatelessWidget {
             ),
           ),
           Container(
-            height: 50,
-            width: 50,
+            height: 45,
+            width: 45,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16),
               gradient: LinearGradient(

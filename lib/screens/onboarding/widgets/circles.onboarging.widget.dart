@@ -8,14 +8,14 @@ class Circles extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Positioned(
-      left: size.width * .5 - 162,
-      top: size.height * .15 + 200,
+      left: size.width * .5 - 151,
+      top: size.height * .15 + 155,
       child: Stack(
         alignment: Alignment.center,
         children: [
           Container(
-            height: 74,
-            width: 74,
+            height: 68,
+            width: 68,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(100),
               gradient: LinearGradient(
@@ -29,8 +29,8 @@ class Circles extends StatelessWidget {
             ),
           ),
           Container(
-            height: 56,
-            width: 56,
+            height: 52,
+            width: 52,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(100),
               gradient: LinearGradient(
@@ -44,8 +44,8 @@ class Circles extends StatelessWidget {
             ),
           ),
           Container(
-            height: 38,
-            width: 38,
+            height: 36,
+            width: 36,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(100),
               gradient: LinearGradient(

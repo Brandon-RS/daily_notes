@@ -11,20 +11,20 @@ class NoteSquare extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Positioned(
-      top: size.height * .15,
-      left: size.width * .5 - 115,
+      top: size.height * .1,
+      left: size.width * .5 - 105,
       child: Stack(
         children: [
           const SizedBox(height: 310, width: 230),
           Positioned(
-            top: 8.5,
+            top: 7.8,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(30),
               child: BackdropFilter(
                 filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
                 child: Container(
-                  height: 290,
-                  width: 230,
+                  height: 270,
+                  width: 210,
                   padding: const EdgeInsets.symmetric(horizontal: 30),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
@@ -35,7 +35,7 @@ class NoteSquare extends StatelessWidget {
                     children: List.generate(
                       4,
                       (index) => Container(
-                        height: 15,
+                        height: 14,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           color: DNColors.grey,
@@ -48,15 +48,15 @@ class NoteSquare extends StatelessWidget {
             ),
           ),
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 5),
-            width: 230,
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            width: 210,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: List.generate(
                 5,
                 (index) => SizedBox(
-                  height: 18,
-                  width: 18,
+                  height: 16,
+                  width: 16,
                   child: CustomPaint(painter: SemiRing()),
                 ),
               ),
