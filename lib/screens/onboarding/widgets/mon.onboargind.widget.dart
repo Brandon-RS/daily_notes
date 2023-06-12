@@ -10,8 +10,8 @@ class Mon extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Positioned(
-      top: size.height * .1,
-      left: 10,
+      top: size.height * .05,
+      left: size.width * .06,
       child: Stack(
         alignment: Alignment.center,
         children: [
@@ -54,8 +54,8 @@ class Mon extends StatelessWidget {
   static List<Widget> dost({required Size size}) {
     return [
       Positioned(
-        top: size.height * .15 + 100,
-        left: 25,
+        top: size.height * .1 + 60,
+        left: size.width * .5 - 170,
         child: Container(
           height: 6,
           width: 6,
@@ -69,8 +69,8 @@ class Mon extends StatelessWidget {
         ),
       ),
       Positioned(
-        top: size.height * .15 + 320,
-        left: 42,
+        top: size.height * .1 + 300,
+        left: size.width * .5 - 155,
         child: Container(
           height: 6,
           width: 6,
@@ -84,8 +84,8 @@ class Mon extends StatelessWidget {
         ),
       ),
       Positioned(
-        top: size.height * .15,
-        right: 40,
+        top: size.height * .1,
+        right: size.width * .5 - 145,
         child: Container(
           height: 6,
           width: 6,
@@ -99,8 +99,8 @@ class Mon extends StatelessWidget {
         ),
       ),
       Positioned(
-        top: size.height * .15 + 290,
-        right: 20,
+        top: size.height * .1 + 270,
+        right: size.width * .5 - 155,
         child: Container(
           height: 6,
           width: 6,
