@@ -39,6 +39,26 @@ ThemeData dnPurpleDark() {
         padding: const MaterialStatePropertyAll(EdgeInsets.zero),
       ),
     ),
+    tabBarTheme: TabBarTheme(
+      dividerColor: Colors.transparent,
+      indicator: UnderlineTabIndicator(
+        borderRadius: BorderRadius.circular(10),
+        borderSide: BorderSide(width: 3.0, color: DNDark.yellow),
+        insets: const EdgeInsets.symmetric(horizontal: -12.0),
+      ),
+      labelColor: DNDark.yellow,
+      labelStyle: const TextStyle(
+        fontFamily: 'Montserrat',
+        fontWeight: FontWeight.w600,
+        fontSize: 15,
+      ),
+      unselectedLabelStyle: const TextStyle(
+        fontFamily: 'Montserrat',
+        fontWeight: FontWeight.w600,
+        fontSize: 15,
+      ),
+      unselectedLabelColor: DNDark.grey,
+    ),
     useMaterial3: true,
   );
 }
