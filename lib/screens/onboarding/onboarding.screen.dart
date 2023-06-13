@@ -14,7 +14,7 @@ class OnboardingScreen extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: DNColors.mainGradient,
+            colors: DNDark.mainGradient,
           ),
         ),
         child: ListView(

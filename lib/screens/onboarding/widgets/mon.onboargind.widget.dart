@@ -21,9 +21,9 @@ class Mon extends StatelessWidget {
             width: 40,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
-              color: DNColors.orange,
+              color: DNDark.orange,
               boxShadow: [
-                BoxShadow(color: DNColors.orange, blurRadius: 4),
+                BoxShadow(color: DNDark.orange, blurRadius: 4),
               ],
             ),
           ),
@@ -35,12 +35,12 @@ class Mon extends StatelessWidget {
                 height: 70,
                 width: 55,
                 decoration: BoxDecoration(
-                  color: DNColors.mainColor,
+                  color: DNDark.mainColor,
                   gradient: LinearGradient(
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                     stops: const [.1, .65],
-                    colors: [DNColors.mainColor.withOpacity(0), DNColors.mainColor],
+                    colors: [DNDark.mainColor.withOpacity(0), DNDark.mainColor],
                   ),
                 ),
               ),

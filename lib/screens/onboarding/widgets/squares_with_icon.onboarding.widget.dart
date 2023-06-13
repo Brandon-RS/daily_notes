@@ -23,8 +23,8 @@ class SquaresWithIcon extends StatelessWidget {
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
                 colors: [
-                  DNColors.purpleLight.withOpacity(.2),
-                  DNColors.purple.withOpacity(.2),
+                  DNDark.purpleLight.withOpacity(.2),
+                  DNDark.purple.withOpacity(.2),
                 ],
               ),
             ),
@@ -38,8 +38,8 @@ class SquaresWithIcon extends StatelessWidget {
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
                 colors: [
-                  DNColors.purpleLight.withOpacity(.55),
-                  DNColors.purple.withOpacity(.55),
+                  DNDark.purpleLight.withOpacity(.55),
+                  DNDark.purple.withOpacity(.55),
                 ],
               ),
             ),
@@ -53,8 +53,8 @@ class SquaresWithIcon extends StatelessWidget {
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
                 colors: [
-                  DNColors.purpleLight,
-                  DNColors.purple,
+                  DNDark.purpleLight,
+                  DNDark.purple,
                 ],
               ),
             ),

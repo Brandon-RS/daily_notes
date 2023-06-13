@@ -22,8 +22,8 @@ class Circles extends StatelessWidget {
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
                 colors: [
-                  DNColors.orangeLight.withOpacity(.2),
-                  DNColors.orange.withOpacity(.2),
+                  DNDark.orangeLight.withOpacity(.2),
+                  DNDark.orange.withOpacity(.2),
                 ],
               ),
             ),
@@ -37,8 +37,8 @@ class Circles extends StatelessWidget {
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
                 colors: [
-                  DNColors.orangeLight.withOpacity(.55),
-                  DNColors.orange.withOpacity(.55),
+                  DNDark.orangeLight.withOpacity(.55),
+                  DNDark.orange.withOpacity(.55),
                 ],
               ),
             ),
@@ -52,8 +52,8 @@ class Circles extends StatelessWidget {
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
                 colors: [
-                  DNColors.orangeLight.withOpacity(.7),
-                  DNColors.orange.withOpacity(.7),
+                  DNDark.orangeLight.withOpacity(.7),
+                  DNDark.orange.withOpacity(.7),
                 ],
               ),
             ),
@@ -67,8 +67,8 @@ class Circles extends StatelessWidget {
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
                 colors: [
-                  DNColors.orangeLight,
-                  DNColors.orange,
+                  DNDark.orangeLight,
+                  DNDark.orange,
                 ],
               ),
             ),

@@ -28,7 +28,7 @@ class NoteSquare extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 30),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
-                    color: DNColors.grey.withOpacity(.4),
+                    color: DNDark.greyPurple.withOpacity(.4),
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -38,7 +38,7 @@ class NoteSquare extends StatelessWidget {
                         height: 14,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          color: DNColors.grey,
+                          color: DNDark.greyPurple,
                         ),
                       ),
                     ),
@@ -76,7 +76,7 @@ class SemiRing extends CustomPainter {
     final paint = Paint()
       ..style = PaintingStyle.stroke
       ..strokeWidth = 6.0
-      ..color = DNColors.grey
+      ..color = DNDark.greyPurple
       ..strokeCap = StrokeCap.round;
 
     final roundedArc = Path()
