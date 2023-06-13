@@ -28,7 +28,7 @@ class TitleCheckBox extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(3),
                 decoration: BoxDecoration(
-                  border: Border.all(color: DNColors.purple),
+                  border: Border.all(color: DNDark.purple),
                   borderRadius: BorderRadius.circular(7),
                 ),
                 child: Icon(

@@ -35,8 +35,8 @@ class OnboardingContent extends StatelessWidget {
           TextButton(
             style: ButtonStyle(
                 foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                overlayColor: MaterialStateProperty.all<Color?>(DNColors.purple.withOpacity(0.04)),
-                backgroundColor: MaterialStateProperty.all<Color?>(DNColors.purple),
+                overlayColor: MaterialStateProperty.all<Color?>(DNDark.purple.withOpacity(0.04)),
+                backgroundColor: MaterialStateProperty.all<Color?>(DNDark.purple),
                 padding: MaterialStateProperty.all(const EdgeInsets.symmetric(horizontal: 30, vertical: 18))),
             onPressed: () => GoRouter.of(context).go('/'),
             child: const Text(

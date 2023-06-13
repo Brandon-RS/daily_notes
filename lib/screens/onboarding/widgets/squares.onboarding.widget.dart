@@ -29,7 +29,7 @@ class Squares extends StatelessWidget {
                 width: 65,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: DNColors.greenBlue.withOpacity(.25),
+                  color: DNDark.greenBlue.withOpacity(.25),
                 ),
               ),
             ),
@@ -38,7 +38,7 @@ class Squares extends StatelessWidget {
               width: 65,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                color: DNColors.greenBlue.withOpacity(.5),
+                color: DNDark.greenBlue.withOpacity(.5),
               ),
             ),
             Container(
@@ -46,7 +46,7 @@ class Squares extends StatelessWidget {
               width: 50,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                color: DNColors.greenBlue,
+                color: DNDark.greenBlue,
               ),
             ),
           ],
