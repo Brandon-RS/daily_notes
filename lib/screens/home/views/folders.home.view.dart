@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
@@ -56,18 +57,9 @@ class _FoldersViewState extends State<FoldersView> {
   }
 
   Future<void> pickFolder() async {
-    final result = await FilePicker.platform.pickFiles(
-      type: FileType.custom,
-      allowedExtensions: [''],
-      allowMultiple: true,
-    );
+    final result = await FilePicker.platform.getDirectoryPath();
 
-    if (result != null && result.files.isNotEmpty) {
-      final folderPath = result.files.first.path!;
-      print('Selected folder path: $folderPath');
-    } else {
-      // User canceled the picker or no folder was selected
-    }
+    print(result);
   }
 
   Future<void> createFolder() async {
@@ -91,6 +83,62 @@ class _FoldersViewState extends State<FoldersView> {
     } else {
       print('Failed to get the app directory');
     }
+  }
+
+  void createFile(String folderPath, String fileName) {
+    // Get the directory where the file will be created
+    Directory directory = Directory(folderPath);
+
+    // Create the directory if it doesn't exist
+    if (!directory.existsSync()) {
+      directory.createSync(recursive: true);
+    }
+
+    // Create the file path by combining the directory path and the file name
+    String filePath = '${directory.path}/$fileName';
+
+    // Create the file
+    File file = File(filePath);
+    file.createSync();
+  }
+
+  Future<void> createFileChossingFolder() async {
+    final result = await FilePicker.platform.getDirectoryPath();
+    if (result != null) {
+      Random random = Random();
+      int i = random.nextInt(15);
+      createFile(result, 'file$i.txt');
+      setTextToFile(result, 'file$i.txt', generateRandomString(30));
+    }
+  }
+
+  String generateRandomString(int length) {
+    const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
+    Random random = Random();
+    return String.fromCharCodes(
+      Iterable.generate(
+        length,
+        (_) => chars.codeUnitAt(random.nextInt(chars.length)),
+      ),
+    );
+  }
+
+  void setTextToFile(String folderPath, String fileName, String text) {
+    // Get the directory where the file exists
+    Directory directory = Directory(folderPath);
+
+    // Create the file path by combining the directory path and the file name
+    String filePath = '${directory.path}/$fileName';
+
+    // Open the file in write mode
+    File file = File(filePath);
+    RandomAccessFile openedFile = file.openSync(mode: FileMode.write);
+
+    // Write the text content to the file
+    openedFile.writeStringSync(text);
+
+    // Close the file
+    openedFile.closeSync();
   }
 
   @override
@@ -120,6 +168,12 @@ class _FoldersViewState extends State<FoldersView> {
             createFolder();
           },
           child: const Text('Create Folder'),
+        ),
+        FilledButton(
+          onPressed: () {
+            createFileChossingFolder();
+          },
+          child: const Text('Create a file'),
         ),
       ],
     );
