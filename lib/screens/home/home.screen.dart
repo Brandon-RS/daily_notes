@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:daily_notes/constants/color.constants.dart';
+import 'package:daily_notes/screens/home/widgets/home.widgets.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -18,6 +21,7 @@ class HomeScreen extends StatelessWidget {
         child: SafeArea(
           child: Column(
             children: [
+              if (Platform.isAndroid) const SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -65,46 +69,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              DefaultTabController(
-                length: 2,
-                child: Expanded(
-                  child: Column(
-                    children: [
-                      const SizedBox(height: 5),
-                      const TabBar(
-                        tabs: [
-                          Tab(text: 'All'),
-                          Tab(text: 'Folder'),
-                        ],
-                      ),
-                      Expanded(
-                        child: TabBarView(
-                          children: [
-                            const Center(
-                              child: Text('All Notes'),
-                            ),
-                            SingleChildScrollView(
-                              child: Column(
-                                children: List.generate(
-                                  20,
-                                  (index) => Container(
-                                    margin: const EdgeInsets.symmetric(vertical: 5),
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(10),
-                                      color: Theme.of(context).primaryColor.withOpacity(.1),
-                                    ),
-                                    height: 100.0,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+              const Tabs(),
             ],
           ),
         ),
