@@ -10,6 +10,7 @@ class DNDark {
   static Color greyPurple = const Color(0xFF49485d);
   static Color white = const Color(0xFFffffff);
   static Color grey = const Color(0xFF848484);
+  static Color yellow = const Color(0xFFfcc04b);
 
   static List<Color> mainGradient = [const Color(0xFF1f1d2a), const Color(0xFF1f1d2b)];
 }
