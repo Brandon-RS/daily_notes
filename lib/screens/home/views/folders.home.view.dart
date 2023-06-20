@@ -1,26 +1,55 @@
 import 'package:flutter/material.dart';
 
-class FoldersView extends StatefulWidget {
+class FoldersView extends StatelessWidget {
   const FoldersView({super.key});
 
   @override
-  State<FoldersView> createState() => _FoldersViewState();
+  Widget build(BuildContext context) {
+    return Center(
+      child: SizedBox(
+        height: 200,
+        width: 340,
+        child: CustomPaint(
+          painter: PT(),
+        ),
+      ),
+    );
+  }
 }
 
-class _FoldersViewState extends State<FoldersView> {
+class PT extends CustomPainter {
   @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            color: Theme.of(context).primaryColor,
-          ),
-          width: 100.0,
-          height: 100.0,
-        ),
-      ],
-    );
+  void paint(Canvas canvas, Size size) {
+    Paint paint = Paint()
+      ..color = Colors.blue
+      ..style = PaintingStyle.fill;
+
+    double radius = 20;
+
+    Path path = Path()
+      ..moveTo(0, 0)
+      ..lineTo(size.width * .2 - radius, size.height - radius)
+      ..quadraticBezierTo(
+        size.width * .2 - 15,
+        size.height,
+        size.width * .2,
+        size.height,
+      )
+      ..lineTo(size.width * .8, size.height)
+      ..quadraticBezierTo(
+        size.width * .8 + 15,
+        size.height,
+        size.width * .8 + radius,
+        size.height - radius,
+      )
+      ..lineTo(size.width, 0)
+      ..close();
+
+    canvas.drawPath(path, paint);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+    return false;
   }
 }
