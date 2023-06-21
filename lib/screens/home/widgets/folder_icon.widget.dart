@@ -16,33 +16,31 @@ class FolderIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double localHeight = 150;
-    double localWidth = 210;
     return SizedBox(
       height: height,
       width: width,
       child: FittedBox(
         fit: BoxFit.contain,
         child: SizedBox(
-          height: localHeight,
-          width: localWidth,
+          height: 150,
+          width: 210,
           child: Stack(
             children: [
               Positioned(
                 bottom: 0,
                 child: SizedBox(
-                  height: (localHeight / 3) * 2,
-                  width: localWidth - (localWidth / 20),
+                  height: 100,
+                  width: 200,
                   child: CustomPaint(
                     painter: FolderBack(color: backColor),
                   ),
                 ),
               ),
               Positioned(
-                left: (localWidth / 20),
+                left: 10,
                 child: SizedBox(
-                  height: localHeight,
-                  width: localWidth - (localWidth / 20),
+                  height: 150,
+                  width: 200,
                   child: CustomPaint(
                     painter: FolderFront(color: frontColor),
                   ),
