@@ -11,6 +11,7 @@ class DNDark {
   static Color greyPurple = const Color(0xFF49485d);
   static Color white = const Color(0xFFffffff);
   static Color grey = const Color(0xFF848484);
+  static Color darkGrey = const Color(0xFF4F4E4E);
   static Color yellow = const Color(0xFFfcc04b);
   static Color darkYellow = const Color(0xFFE3A32D);
 
