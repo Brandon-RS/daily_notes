@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// TODO(BRANDOM): Rename this class for something better.
 class DNDark {
   static Color mainColor = const Color(0xFF1f1d2a);
   static Color purpleLight = const Color(0xFFc097f8);
@@ -11,6 +12,10 @@ class DNDark {
   static Color white = const Color(0xFFffffff);
   static Color grey = const Color(0xFF848484);
   static Color yellow = const Color(0xFFfcc04b);
+  static Color darkYellow = const Color(0xFFE3A32D);
 
-  static List<Color> mainGradient = [const Color(0xFF1f1d2a), const Color(0xFF1f1d2b)];
+  static List<Color> mainGradient = [
+    const Color(0xFF1f1d2a),
+    const Color(0xFF1f1d2b),
+  ];
 }
