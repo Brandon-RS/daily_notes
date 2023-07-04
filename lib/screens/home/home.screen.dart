@@ -1,14 +1,25 @@
 import 'dart:io';
 
 import 'package:daily_notes/constants/color.constants.dart';
+import 'package:daily_notes/file_management/file_management.dart';
+import 'package:daily_notes/file_management/store/fm.store.dart';
+import 'package:daily_notes/locator.dart';
+import 'package:daily_notes/preferences/preferences.dart';
+import 'package:daily_notes/screens/home/helpers/view_type.dart';
+import 'package:daily_notes/screens/home/store/home_view.store.dart';
 import 'package:daily_notes/screens/home/widgets/home.widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:path/path.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final viewStore = locator<HomeViewStore>();
+    final fmStore = locator<FMStore>();
+    final prefs = Preferences();
     final size = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
@@ -73,6 +84,53 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
         ),
+      ),
+      floatingActionButton: Observer(
+        builder: (context) => InkWell(
+          onTap: viewStore.currentView == HViewType.notes
+              ? () {
+                  // TODO(BRANDOM): Implement logic to create a new file/note
+                }
+              : () async {
+                  if (fmStore.getDefaultFolder == null) {
+                    await selectDefaultFolder(context, prefs: prefs);
+                  }
+                },
+          onLongPress: () async {
+            await selectDefaultFolder(context, prefs: prefs);
+          },
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(100),
+              color: Theme.of(context).primaryColor,
+            ),
+            padding: const EdgeInsets.all(16),
+            child: Icon(Icons.add, color: DNDark.white),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Future<void> selectDefaultFolder(
+    BuildContext context, {
+    required Preferences prefs,
+  }) async {
+    // TODO(BRANDOM): Implement reactions to avoid the "async gap" warning
+    final folderPath = await FM.pickFolder();
+    if (folderPath != null) prefs.defaultFolderPath = folderPath;
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Row(
+          children: [
+            Text(
+              folderPath != null
+                  ? '${basename(folderPath)} selected'
+                  : 'Folder not selected, try again :|',
+            ),
+          ],
+        ),
+        showCloseIcon: true,
       ),
     );
   }

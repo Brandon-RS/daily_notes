@@ -14,4 +14,13 @@ class Preferences {
   static set showOnboarding(bool value) {
     _prefs.setBool('onboarding', value);
   }
+
+  String? get defaultFolderPath => _prefs.getString('defaultPath');
+
+  /// Send a null or empty value to delete the [defaultPath] key
+  set defaultFolderPath(String? newPath) {
+    newPath != null
+        ? _prefs.setString('defaultPath', newPath)
+        : _prefs.remove('defaultPath');
+  }
 }

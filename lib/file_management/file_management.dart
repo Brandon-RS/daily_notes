@@ -48,10 +48,8 @@ class FM {
     }
   }
 
-  static Future<void> pickFolder() async {
-    final result = await FilePicker.platform.getDirectoryPath();
-
-    print(result);
+  static Future<String?> pickFolder() async {
+    return await FilePicker.platform.getDirectoryPath();
   }
 
   static Future<void> createFolder() async {
