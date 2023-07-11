@@ -1,4 +1,5 @@
 import 'package:daily_notes/constants/color.constants.dart';
+import 'package:daily_notes/file_management/file_management.dart';
 import 'package:daily_notes/screens/home/widgets/folder_icon.widget.dart';
 import 'package:flutter/material.dart';
 
@@ -7,6 +8,7 @@ class FoldersView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    FM.readFolderDirectories();
     return Container(
       alignment: Alignment.center,
       margin: const EdgeInsets.only(top: 100),

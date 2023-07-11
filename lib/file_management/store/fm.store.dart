@@ -9,14 +9,20 @@ abstract class _FMStore with Store {
   final _prefs = Preferences();
 
   @observable
-  String? defaultFolder;
+  String? successMessage;
+
+  @observable
+  String? errorMessage;
+
+  void clearStore() {
+    successMessage = null;
+    errorMessage = null;
+  }
 
   @computed
-  String? get getDefaultFolder => defaultFolder = _prefs.defaultFolderPath;
+  String? get defaultFolder => _prefs.defaultFolderPath;
 
-  @action
-  void setDefaultFolder(String? path) {
-    defaultFolder = path;
-    _prefs.defaultFolderPath = defaultFolder;
+  set defaultFolder(String? path) {
+    _prefs.defaultFolderPath = path;
   }
 }
